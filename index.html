@@ -1,139 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Birthday Surprise</title>
-  <!-- Google Font Pacifico -->
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      background: radial-gradient(circle at center, #000000 70%, #0a0a0a 100%);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-      font-family: 'Pacifico', cursive;
-    }
-
-    #main-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center; /* يخلي الزرار في النص */
-    }
-
-    h1 {
-      color: white;
-      font-size: 3em;
-      text-shadow: 0 0 15px #fff, 0 0 30px #ff00ff, 0 0 45px #ff00ff;
-      animation: glowMove 3s infinite alternate;
-      margin-bottom: 80px; /* المسافة الرأسية بين الجملة والزرار */
-    }
-
-    @keyframes glowMove {
-      from {
-        text-shadow: 0 0 10px #fff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
-      }
-      to {
-        text-shadow: 0 0 20px #fff, 0 0 40px #ff00ff, 0 0 60px #ff00ff;
-      }
-    }
-
-    .enter-btn {
-      padding: 15px 40px;
-      font-size: 1.5em;
-      font-family: 'Pacifico', cursive;
-      color: white;
-      background: transparent;
-      border: 2px solid white;
-      border-radius: 30px;
-      cursor: pointer;
-      transition: 0.3s;
-      text-shadow: 0 0 15px #fff, 0 0 30px #00ffff, 0 0 45px #00ffff;
-      animation: glowBtn 2.5s infinite alternate;
-    }
-
-    @keyframes glowBtn {
-      from {
-        box-shadow: 0 0 10px #fff, 0 0 20px #00ffff, 0 0 30px #00ffff;
-      }
-      to {
-        box-shadow: 0 0 20px #fff, 0 0 40px #00ffff, 0 0 60px #00ffff;
-      }
-    }
-
-    .enter-btn:hover {
-      background: white;
-      color: black;
-      text-shadow: none;
-    }
-
-    .loading-text {
-      display: none;
-      font-size: 1.8em;
-      color: white;
-      text-shadow: 0 0 10px #ff69b4, 0 0 20px #ff69b4;
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 0.3; }
-      50% { opacity: 1; }
-    }
-
-    .sparkle {
-      position: absolute;
-      width: 8px;
-      height: 8px;
-      background: white;
-      border-radius: 50%;
-      animation: sparkleAnim 3s infinite ease-in-out;
-      opacity: 0.8;
-    }
-
-    @keyframes sparkleAnim {
-      0% { transform: scale(0.5) translateY(0); opacity: 0.6; }
-      50% { transform: scale(1.5) translateY(-20px); opacity: 1; }
-      100% { transform: scale(0.5) translateY(0); opacity: 0.6; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Legendary Ultra Max Birthday 🎉</title>
+<style>
+body{margin:0;padding:0;font-family:'Comic Sans MS',cursive,sans-serif;background: linear-gradient(135deg,#ff9a9e,#fad0c4);overflow:hidden;text-align:center;position:relative;cursor:crosshair;}
+h1{font-size:3rem;color:#fff;margin-top:30px;text-shadow:0 0 10px #ff6b6b,0 0 20px #ff3dff;animation: glow 2s infinite alternate;}
+@keyframes glow{from{text-shadow:0 0 10px #ff6b6b,0 0 20px #ff3dff;}to{text-shadow:0 0 20px #fff,0 0 30px #ff3dff;}}
+.word-cloud{margin:40px auto;display:flex;flex-direction:column;align-items:center;gap:20px;}
+.word{font-size:1.8rem;color:#fff;padding:10px 20px;border-radius:20px;text-shadow:0 0 5px #fff,0 0 10px #ff6b6b;opacity:0;animation:fadeInGlow 1.5s forwards;}
+.word:nth-child(1){animation-delay:0s;} .word:nth-child(2){animation-delay:0.3s;}
+.word:nth-child(3){animation-delay:0.6s;} .word:nth-child(4){animation-delay:0.9s;}
+.word:nth-child(5){animation-delay:1.2s;}
+@keyframes fadeInGlow{0%{opacity:0;transform:translateY(20px);}50%{opacity:0.7;transform:translateY(0);}100%{opacity:1;transform:translateY(0);}}
+.message{margin:20px auto;font-size:1.3rem;color:#fff;padding:20px;max-width:700px;background:rgba(0,0,0,0.4);border-radius:15px;line-height:1.6;}
+.gift-btn{margin:20px auto;padding:15px 30px;background:#ff6b6b;color:#fff;border:none;border-radius:25px;font-size:1.2rem;cursor:pointer;box-shadow:0 4px 10px rgba(0,0,0,0.3);transition:0.3s;}
+.gift-btn:hover{background:#ff3dff;transform:scale(1.1);}
+.arrow-left,.arrow-right{position:fixed;top:50%;transform:translateY(-50%);font-size:3rem;color:#fff;text-shadow:0 0 10px #ff3dff,0 0 20px #ff6b6b;animation:arrowGlow 1s infinite alternate;cursor:pointer;z-index:1000;}
+.arrow-left{left:10px;} .arrow-right{right:10px;}
+@keyframes arrowGlow{from{text-shadow:0 0 10px #ff3dff,0 0 20px #ff6b6b;}to{text-shadow:0 0 20px #fff,0 0 30px #ff3dff;}}
+.balloon,.trail,.sparkle,.confetti{position:absolute;border-radius:50%; z-index:1; box-shadow:0 0 25px #fff;}
+.balloon{width:40px;height:60px;animation:floatBalloon linear infinite;}
+@keyframes floatBalloon{0%{transform:translateY(100vh) rotate(0deg);}100%{transform:translateY(-250px) rotate(360deg);}}
+.confetti{width:10px;height:10px;opacity:0.8;animation:fall linear infinite;}
+@keyframes fall{0%{transform:translateY(-10px) rotate(0deg) opacity:1;}100%{transform:translateY(110vh) rotate(360deg) opacity:0;}}
+.firework{width:18px;height:18px;border-radius:50%;pointer-events:none;opacity:0.9;animation:fwAnim 0.8s forwards;box-shadow:0 0 25px #fff;}
+@keyframes fwAnim{0%{transform:scale(0);opacity:1;}50%{transform:scale(2);opacity:1;}100%{transform:scale(0);opacity:0;}}
+</style>
 </head>
 <body>
-  <div id="main-content">
-    <h1>Get your surprise</h1>
-    <button class="enter-btn" onclick="startLoading()">Enter</button>
-  </div>
 
-  <div id="loading" class="loading-text">Loading your surprise...</div>
+<h1>Happy Birthday ya Agmal w A7la Manoon 🎀✨</h1>
 
-  <!-- شوية نجوم ديكورية -->
-  <div class="sparkle" style="top:20%; left:15%; animation-delay:0s;"></div>
-  <div class="sparkle" style="top:40%; left:70%; animation-delay:1s;"></div>
-  <div class="sparkle" style="top:65%; left:30%; animation-delay:2s;"></div>
-  <div class="sparkle" style="top:80%; left:50%; animation-delay:1.5s;"></div>
-  <div class="sparkle" style="top:25%; left:85%; animation-delay:2.5s;"></div>
+<div class="word-cloud">
+  <div class="word">Beautiful 🌸 ❤️</div>
+  <div class="word">Funny 😆</div>
+  <div class="word">Queen 👑</div>
+  <div class="word">Sweet 🧁</div>
+  <div class="word">Amazing 💫</div>
+</div>
 
-  <!-- خانة الملف الصوتي -->
-  <audio id="loadingSound" src="sound.mp3"></audio>
+<div class="message">♥️ ربنا يديمك يا قمر ويخليك للي بيحبوك وأشوفك دايما محقق كل اللي نفسك فيه ♥️</div>
 
-  <script>
-    function startLoading() {
-      document.getElementById("main-content").style.display = "none";
-      document.getElementById("loading").style.display = "block";
+<div id="balloons-container"></div>
+<div id="confetti-container"></div>
+<div id="fireworks-container"></div>
+<div id="trails-container"></div>
+<div id="sparkle-container"></div>
 
-      // تشغيل الصوت
-      const audio = document.getElementById("loadingSound");
-      audio.play();
+<audio id="song"><source src="Angham_Asamek_ElKateera.mp3" type="audio/mpeg"></audio>
+<button id="playBtn" onclick="document.getElementById('song').play()">🎶 Play Song</button>
 
-      // بعد 6 ثواني يتوقف الصوت وينتقل للمرحلة التانية
-      setTimeout(() => {
-        audio.pause();
-        audio.currentTime = 0;
-        window.location.href = "stage2.html"; // غيّرها للرابط الفعلي للمرحلة التانية
-      }, 6000);
-    }
-  </script>
+<audio id="balloonSound"><source src="balloon_pop.mp3" type="audio/mpeg"></audio>
+<audio id="confettiSound"><source src="confetti_pop.mp3" type="audio/mpeg"></audio>
+<audio id="fireworksSound"><source src="fireworks.mp3" type="audio/mpeg"></audio>
+
+<script>
+const balloonContainer=document.getElementById('balloons-container');
+for(let i=0;i<30;i++){
+  let b=document.createElement('div');
+  b.className='balloon';
+  b.style.left=Math.random()*100+'vw';
+  b.style.animationDuration=(6+Math.random()*5)+'s';
+  b.style.background=`radial-gradient(circle at 30% 30%, #fff, hsl(${Math.random()*360},70%,60%))`;
+  balloonContainer.appendChild(b);
+  setInterval(()=>{createTrail(parseFloat(b.offsetLeft)+20, parseFloat(b.offsetTop)+30);},100);
+}
+const confettiContainer=document.getElementById('confetti-container');
+for(let i=0;i<100;i++){
+  let c=document.createElement('div');
+  c.className='confetti';
+  c.style.left=Math.random()*100+'vw';
+  c.style.width=5+Math.random()*12+'px';
+  c.style.height=c.style.width;
+  c.style.backgroundColor=`hsl(${Math.random()*360},80%,60%)`;
+  c.style.animationDuration=(3+Math.random()*6)+'s';
+  confettiContainer.appendChild(c);
+}
+document.body.addEventListener('mousemove', e=>{
+  for(let i=0;i<2;i++){
+    let s=document.createElement('div');
+    s.className='sparkle';
+    s.style.width='6px'; s.style.height='6px';
+    s.style.left=e.clientX+'px'; s.style.top=e.clientY+'px';
+    s.style.background=`hsl(${Math.random()*360},100%,80%)`;
+    document.getElementById('sparkle-container').appendChild(s);
+    setTimeout(()=>s.remove(),500);
+  }
+});
+function createTrail(x,y){
+  const trail=document.createElement('div');
+  trail.className='trail';
+  trail.style.width='12px'; trail.style.height='12px';
+  trail.style.left=x+'px'; trail.style.top=y+'px';
+  trail.style.background=`hsl(${Math.random()*360},100%,70%)`;
+  trail.style.opacity=0.9;
+  document.getElementById('trails-container').appendChild(trail);
+  let dy=-1; let dx=(Math.random()-0.5)*2;
+  let interval=setInterval(()=>{
+    trail.style.top=(parseFloat(trail.style.top)+dy)+'px';
+    trail.style.left=(parseFloat(trail.style.left)+dx)+'px';
+    trail.style.opacity-=0.01;
+    if(trail.style.opacity<=0){trail.remove(); clearInterval(interval);}
+  },25);
+}
+function triggerFireworks(x=null,y=null){
+  const fwContainer=document.getElementById('fireworks-container');
+  for(let i=0;i<30;i++){
+    let fw=document.createElement('div');
+    fw.className='firework';
+    fw.style.background=`hsl(${Math.random()*360},90%,70%)`;
+    fw.style.left=(x!==null?x+Math.random()*60-30:Math.random()*100)+'px';
+    fw.style.top=(y!==null?y+Math.random()*60-30:Math.random()*80)+'px';
+    fwContainer.appendChild(fw);
+    document.getElementById('fireworksSound').play();
+    createTrail(parseFloat(fw.style.left),parseFloat(fw.style.top));
+    setTimeout(()=>fw.remove(),800);
+  }
+}
+document.body.addEventListener('click', e=>{triggerFireworks(e.clientX,e.clientY);});
+document.body.addEventListener('touchstart', e=>{const t=e.touches[0]; triggerFireworks(t.clientX,t.clientY);});
+</script>
 </body>
 </html>
